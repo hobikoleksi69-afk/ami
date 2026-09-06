@@ -1,6 +1,7 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Instagram, Youtube, Facebook, ArrowUp } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Youtube, Facebook, ArrowUp, MessageSquare } from 'lucide-react';
 import { AmiLogo } from './AmiLogo';
+import { ADMIN_WHATSAPP, WA_CHANNEL_LINK } from '../config';
 
 interface FooterProps {
   onOpenCertCheck: () => void;
@@ -13,14 +14,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCertCheck, onOpenRegister 
   };
 
   const navLinks = [
+    { label: 'Program Pelatihan', href: '#program' },
     { label: 'Tentang AMI', href: '#tentang' },
     { label: '5 Pilar Gerak', href: '#pilar' },
-    { label: 'Program Pelatihan', href: '#program' },
-    { label: 'Bank Modul Tumbuh', href: '#program' },
-    { label: 'Jurnal Riset Muda', href: '#jurnal' },
-    { label: 'Etalase Karya Pemuda', href: '#karya' },
-    { label: 'Cerita Komunitas', href: '#komunitas' },
-    { label: 'Gabung Anggota', href: '#gabung' },
+    { label: 'Jejaring Komunitas', href: '#komunitas' },
+    { label: 'Kabar & Liputan', href: '#kabar' },
+    { label: 'Testimoni Alumni', href: '#testimoni' },
+    { label: 'Bank Modul', href: '#program' },
+    { label: 'Jurnal Riset Muda', href: '#program' },
   ];
 
   return (
@@ -135,14 +136,29 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCertCheck, onOpenRegister 
             <div className="flex items-start gap-3 text-xs text-slate-400">
               <Phone className="w-4 h-4 text-[#43C572] shrink-0 mt-0.5" />
               <div>
-                <span className="text-slate-300 font-semibold block">WhatsApp Pengurus:</span>
+                <span className="text-slate-300 font-semibold block">WhatsApp Admin Resmi:</span>
                 <a
-                  href="https://wa.me/6281234567890"
+                  href={`https://wa.me/${ADMIN_WHATSAPP}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  +62 812-3456-7890 (Admin Pusat)
+                  +{ADMIN_WHATSAPP.slice(0, 2)} {ADMIN_WHATSAPP.slice(2, 5)}-{ADMIN_WHATSAPP.slice(5, 9)}-{ADMIN_WHATSAPP.slice(9)} (Pusat)
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 text-xs text-slate-400">
+              <MessageSquare className="w-4 h-4 text-[#43C572] shrink-0 mt-0.5" />
+              <div>
+                <span className="text-slate-300 font-semibold block">Saluran Resmi WhatsApp:</span>
+                <a
+                  href={WA_CHANNEL_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-400 hover:text-emerald-300 transition-colors"
+                >
+                  Ikuti Saluran AMI →
                 </a>
               </div>
             </div>

@@ -82,7 +82,7 @@ export const MembershipAndCertSection: React.FC<MembershipAndCertSectionProps> =
               </div>
 
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
-                Setiap anak muda yang mendaftar langsung memperoleh nomor anggota unik (contoh: <code>AMI-2026-XXXX</code>)
+                Setiap pemuda yang menyelesaikan program pelatihan pertamanya langsung memperoleh nomor anggota unik (contoh: <code>AMI-2026-XXXX</code>)
                 berbentuk kartu digital. Dilengkapi QR Code dinamis yang memuat rekam jejak pelatihan, peran komunitas, dan
                 tingkatan keaktifanmu.
               </p>
@@ -90,7 +90,7 @@ export const MembershipAndCertSection: React.FC<MembershipAndCertSectionProps> =
               <div className="space-y-2.5 mb-6">
                 <div className="flex items-center gap-2.5 text-xs text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-[#2E9E5B] shrink-0" />
-                  <span>Diterbitkan instan saat selesai mengisi formulir pendaftaran.</span>
+                  <span>Diterbitkan resmi saat dinyatakan lulus dari program pelatihan AMI.</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-[#2E9E5B] shrink-0" />
@@ -98,18 +98,18 @@ export const MembershipAndCertSection: React.FC<MembershipAndCertSectionProps> =
                 </div>
                 <div className="flex items-center gap-2.5 text-xs text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-[#2E9E5B] shrink-0" />
-                  <span>Kunci akses utama program fellowship tertutup dan diskon mitra wirausaha.</span>
+                  <span>Kunci akses utama program lanjutan, forum regional, dan diskon mitra wirausaha.</span>
                 </div>
               </div>
             </div>
 
-            <button
-              onClick={onOpenRegister}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold text-white bg-[#1B5E3A] hover:bg-[#14472c] transition-all cursor-pointer shadow-xs"
+            <a
+              href="#program"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-extrabold text-[#1B5E3A] bg-[#43C572] hover:bg-[#38b264] transition-all cursor-pointer shadow-xs min-h-[44px]"
             >
-              <span>Daftar AMI ID Sekarang</span>
-              <Sparkles className="w-4 h-4 text-[#43C572]" />
-            </button>
+              <span>Pilih Program untuk Dapatkan AMI ID</span>
+              <Sparkles className="w-4 h-4 text-[#1B5E3A]" />
+            </a>
           </div>
 
           {/* Card 2: Sertifikat Tervalidasi Online */}

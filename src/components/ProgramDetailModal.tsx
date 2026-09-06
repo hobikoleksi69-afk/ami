@@ -5,7 +5,7 @@ import { YouthProgramItem } from '../types';
 interface ProgramDetailModalProps {
   program: YouthProgramItem | null;
   onClose: () => void;
-  onOpenRegister: () => void;
+  onOpenRegister: (program: YouthProgramItem) => void;
 }
 
 export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
@@ -109,7 +109,7 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
           <button
             onClick={() => {
               onClose();
-              onOpenRegister();
+              onOpenRegister(program);
             }}
             className="px-6 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold text-[#1B5E3A] bg-[#43C572] hover:bg-[#38b264] transition-all flex items-center gap-2 cursor-pointer shadow-xs"
           >

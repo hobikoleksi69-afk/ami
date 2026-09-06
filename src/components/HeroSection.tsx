@@ -1,12 +1,13 @@
 import React from 'react';
-import { ArrowRight, Sparkles, Compass, CheckCircle2, QrCode } from 'lucide-react';
+import { ArrowDown, Sparkles, MessageSquare, CheckCircle2, QrCode } from 'lucide-react';
 import { motion } from 'motion/react';
+import { WA_CHANNEL_LINK } from '../config';
 
 interface HeroSectionProps {
-  onOpenRegister: () => void;
+  onOpenRegister?: () => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister }) => {
+export const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
     <section className="relative pt-24 sm:pt-28 pb-16 sm:pb-24 overflow-hidden bg-gradient-to-br from-[#1B5E3A] via-[#1e6b42] to-[#2E9E5B] text-white">
       {/* Decorative Geometric Elements inspired by Letters "A" and "M" */}
@@ -66,32 +67,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister }) => {
 
             {/* Subheadline Positioning Singkat */}
             <p className="mt-5 sm:mt-6 text-base sm:text-lg lg:text-xl text-emerald-50/90 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
-              Kami hadir sebagai ekosistem resmi pengembangan anak muda dengan{' '}
-              <strong className="text-white font-semibold">program terstruktur</strong>,{' '}
-              <strong className="text-white font-semibold">sistem pengakuan yang jelas</strong>, dan jejak nyata yang
-              bisa kamu pertanggungjawabkan.
+              Temukan program dan pelatihan AMI, daftar langsung, dan bergabunglah bersama jejaring pemuda penggerak se-Indonesia.{' '}
+              <strong className="text-white font-semibold">Status keanggotaan resmi</strong> didapatkan setelah kamu menyelesaikan program pertamamu.
             </p>
 
             {/* Dua Tombol CTA */}
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
-              {/* Solid Hijau Highlight (#43C572) */}
-              <button
-                id="btn-hero-gabung"
-                onClick={onOpenRegister}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm sm:text-base font-extrabold text-[#1B5E3A] bg-[#43C572] hover:bg-[#38b264] active:bg-[#2fa057] shadow-lg shadow-emerald-950/20 transition-all transform hover:-translate-y-0.5 cursor-pointer min-h-[48px]"
-              >
-                <span>Gabung Jadi Anggota</span>
-                <ArrowRight className="w-4 h-4 stroke-[2.5]" />
-              </button>
-
-              {/* Outline Button */}
+              {/* Solid Hijau Highlight (#43C572) - Primary CTA */}
               <a
                 id="btn-hero-lihat-program"
                 href="#program"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-sm sm:text-base font-bold text-white border-2 border-white/80 hover:bg-white/10 active:bg-white/20 transition-all cursor-pointer min-h-[48px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm sm:text-base font-extrabold text-[#1B5E3A] bg-[#43C572] hover:bg-[#38b264] active:bg-[#2fa057] shadow-lg shadow-emerald-950/20 transition-all transform hover:-translate-y-0.5 cursor-pointer min-h-[48px]"
               >
-                <Compass className="w-4 h-4" />
-                <span>Lihat Program</span>
+                <span>Lihat Program Terdekat</span>
+                <ArrowDown className="w-4 h-4 stroke-[2.5]" />
+              </a>
+
+              {/* Outline Button - Secondary CTA: WhatsApp Channel */}
+              <a
+                id="btn-hero-saluran-wa"
+                href={WA_CHANNEL_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full text-sm sm:text-base font-bold text-white border-2 border-white/80 hover:bg-white/10 active:bg-white/20 transition-all cursor-pointer min-h-[48px]"
+              >
+                <MessageSquare className="w-4 h-4" />
+                <span>Ikuti Kabar AMI</span>
               </a>
             </div>
 
@@ -179,13 +180,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister }) => {
                       <span>Scan untuk cek rekam jejak</span>
                     </div>
                   </div>
-                  <button
-                    onClick={onOpenRegister}
+                  <a
+                    href="#program"
                     className="text-xs font-bold text-[#43C572] hover:text-white flex items-center gap-1 transition-colors cursor-pointer"
                   >
-                    <span>Dapatkan ID Kamu</span>
+                    <span>Diberikan Usai Pelatihan</span>
                     <Sparkles className="w-3.5 h-3.5" />
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

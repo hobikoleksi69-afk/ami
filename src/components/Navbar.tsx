@@ -20,13 +20,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister, onOpenCertCheck 
   }, []);
 
   const navLinks = [
-    { label: 'Tentang', href: '#tentang' },
-    { label: 'Pilar Gerak', href: '#pilar' },
     { label: 'Program', href: '#program' },
-    { label: 'Karya', href: '#karya' },
+    { label: 'Tentang', href: '#tentang' },
+    { label: 'Pilar', href: '#pilar' },
     { label: 'Komunitas', href: '#komunitas' },
-    { label: 'Kabar & Riset', href: '#jurnal' },
-    { label: 'Gabung', href: '#gabung' },
+    { label: 'Kabar', href: '#kabar' },
+    { label: 'Testimoni', href: '#testimoni' },
   ];
 
   return (
@@ -74,24 +73,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister, onOpenCertCheck 
             </button>
 
             {/* Main Join CTA Button - Hijau Terang (#43C572) with contrast text */}
-            <button
-              id="btn-nav-gabung-sekarang"
-              onClick={onOpenRegister}
+            <a
+              id="btn-nav-lihat-program"
+              href="#program"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-extrabold text-[#1B5E3A] bg-[#43C572] hover:bg-[#38b264] active:bg-[#2fa057] shadow-md hover:shadow-emerald-300/40 transition-all transform hover:-translate-y-0.5 cursor-pointer"
             >
-              <span>Gabung Sekarang</span>
+              <span>Lihat Program</span>
               <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
-            </button>
+            </a>
           </div>
 
           {/* Mobile Hamburger Button */}
           <div className="flex sm:hidden items-center gap-2">
-            <button
-              onClick={onOpenRegister}
+            <a
+              href="#program"
               className="px-3 py-1.5 rounded-full text-xs font-bold text-[#1B5E3A] bg-[#43C572] active:bg-[#38b264]"
             >
-              Gabung
-            </button>
+              Program
+            </a>
             <button
               id="btn-toggle-mobile-menu"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -132,16 +131,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister, onOpenCertCheck 
               <span>Cek Validasi Sertifikat AMI</span>
             </button>
 
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenRegister();
-              }}
+            <a
+              href="#program"
+              onClick={() => setMobileMenuOpen(false)}
               className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-extrabold text-[#1B5E3A] bg-[#43C572] shadow-sm"
             >
               <Sparkles className="w-4 h-4" />
-              <span>Daftar Jadi Anggota AMI</span>
-            </button>
+              <span>Lihat Program Terdekat</span>
+            </a>
           </div>
         </div>
       )}

@@ -4,6 +4,8 @@ import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
 import { PillarsSection } from './components/PillarsSection';
 import { ProgramsServicesSection } from './components/ProgramsServicesSection';
+import { CommunitySection } from './components/CommunitySection';
+import { NewsSection } from './components/NewsSection';
 import { ImpactSection } from './components/ImpactSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { MembershipAndCertSection } from './components/MembershipAndCertSection';
@@ -32,6 +34,7 @@ import {
 export default function App() {
   // Modal states
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+  const [registerProgram, setRegisterProgram] = useState<YouthProgramItem | null>(null);
   const [isCertModalOpen, setIsCertModalOpen] = useState(false);
 
   const [selectedPillar, setSelectedPillar] = useState<PillarItem | null>(null);
@@ -40,26 +43,31 @@ export default function App() {
   const [selectedJournal, setSelectedJournal] = useState<YouthJournalItem | null>(null);
   const [selectedWork, setSelectedWork] = useState<YouthWorkItem | null>(null);
 
+  const handleOpenRegister = (program?: YouthProgramItem) => {
+    setRegisterProgram(program || null);
+    setIsRegisterOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-[#43C572] selection:text-[#1B5E3A] relative">
       {/* 1. Navbar */}
       <Navbar
-        onOpenRegister={() => setIsRegisterOpen(true)}
+        onOpenRegister={() => handleOpenRegister()}
         onOpenCertCheck={() => setIsCertModalOpen(true)}
       />
 
       {/* Main Page Sections */}
       <main>
         {/* 2. Hero Section */}
-        <HeroSection onOpenRegister={() => setIsRegisterOpen(true)} />
+        <HeroSection onOpenRegister={() => handleOpenRegister()} />
 
         {/* 3. Tentang AMI & 5 Nilai Inti */}
-        <AboutSection onOpenRegister={() => setIsRegisterOpen(true)} />
+        <AboutSection onOpenRegister={() => handleOpenRegister()} />
 
-        {/* 4. Pilar Gerak (5 Kolom dengan kode warna pilar) */}
+        {/* 4. Pilar Gerak (5 Kolom dengan kode warna pilar & banner transisi ke program) */}
         <PillarsSection
           onSelectPillar={(pillar) => setSelectedPillar(pillar)}
-          onOpenRegister={() => setIsRegisterOpen(true)}
+          onOpenRegister={() => handleOpenRegister()}
         />
 
         {/* 5. Program & Layanan (Program AMI, Modul Tumbuh, Jurnal Muda, Karya AMI) */}
@@ -68,38 +76,48 @@ export default function App() {
           onSelectModule={(mod) => setSelectedModule(mod)}
           onSelectJournal={(journal) => setSelectedJournal(journal)}
           onSelectWork={(work) => setSelectedWork(work)}
-          onOpenRegister={() => setIsRegisterOpen(true)}
+          onOpenRegister={(prog) => handleOpenRegister(prog)}
         />
 
-        {/* 6. Statistik / Jejak Dampak (Counter Animasi, bukan 0) */}
+        {/* 6. Komunitas AMI (Jejaring Daerah & Alur Menjadi Anggota) */}
+        <CommunitySection />
+
+        {/* 7. Kabar AMI (Berita Terkini & Saluran WhatsApp) */}
+        <NewsSection />
+
+        {/* 8. Statistik / Jejak Dampak (Counter Angka Terverifikasi) */}
         <ImpactSection />
 
-        {/* 7. Testimoni Anggota Komunitas */}
+        {/* 9. Testimoni Anggota Komunitas ("Kata Mereka yang Sudah Ikut Program AMI") */}
         <TestimonialsSection />
 
-        {/* 8. Keanggotaan & Sertifikasi (AMI ID, Validator, 3 Tingkatan) */}
+        {/* 10. Keanggotaan & Sertifikasi (AMI ID, Validator, 3 Tingkatan Usai Program) */}
         <MembershipAndCertSection
           onOpenCertCheck={() => setIsCertModalOpen(true)}
-          onOpenRegister={() => setIsRegisterOpen(true)}
+          onOpenRegister={() => handleOpenRegister()}
         />
 
-        {/* 9. Kemitraan (Didukung Oleh) */}
+        {/* 11. Kemitraan (Didukung Oleh) */}
         <PartnersSection />
 
-        {/* 10. CTA Bergabung (Hijau Tua, WhatsApp, Formulir) */}
-        <CtaSection onOpenRegister={() => setIsRegisterOpen(true)} />
+        {/* 12. CTA Penutup (WhatsApp & Link Program) */}
+        <CtaSection onOpenRegister={() => handleOpenRegister()} />
       </main>
 
-      {/* 11. Footer */}
+      {/* 13. Footer */}
       <Footer
         onOpenCertCheck={() => setIsCertModalOpen(true)}
-        onOpenRegister={() => setIsRegisterOpen(true)}
+        onOpenRegister={() => handleOpenRegister()}
       />
 
       {/* Interactive Modals */}
       <RegisterModal
         isOpen={isRegisterOpen}
-        onClose={() => setIsRegisterOpen(false)}
+        onClose={() => {
+          setIsRegisterOpen(false);
+          setRegisterProgram(null);
+        }}
+        selectedProgram={registerProgram}
       />
 
       <CertValidatorModal
@@ -110,13 +128,13 @@ export default function App() {
       <PillarDetailModal
         pillar={selectedPillar}
         onClose={() => setSelectedPillar(null)}
-        onOpenRegister={() => setIsRegisterOpen(true)}
+        onOpenRegister={() => handleOpenRegister()}
       />
 
       <ProgramDetailModal
         program={selectedProgram}
         onClose={() => setSelectedProgram(null)}
-        onOpenRegister={() => setIsRegisterOpen(true)}
+        onOpenRegister={(prog) => handleOpenRegister(prog)}
       />
 
       <ModuleDownloadModal

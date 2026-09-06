@@ -157,20 +157,29 @@ export const PillarsSection: React.FC<PillarsSectionProps> = ({
           })}
         </div>
 
-        {/* Interactive Bottom Banner */}
-        <div className="mt-10 bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#E31E24]" />
-            <span className="text-slate-600 font-medium">
-              Setiap anggota bebas memilih atau berpindah fokus pilar sesuai minat pengembangan karir dan sosial.
-            </span>
+        {/* Transition Banner between Pillars and Programs */}
+        <div className="mt-12 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 rounded-2xl bg-emerald-50 text-[#1B5E3A] flex items-center justify-center shrink-0 border border-[#2E9E5B]/20">
+              <Sparkles className="w-5 h-5 text-[#2E9E5B]" />
+            </div>
+            <div>
+              <span className="text-xs font-bold text-[#2E9E5B] uppercase tracking-wider block mb-1">
+                Langkah Nyata Berikutnya
+              </span>
+              <p className="text-sm sm:text-base font-bold text-slate-800 leading-snug">
+                Dari pilar-pilar pergerakan di atas, kami mewujudkannya dalam bentuk pelatihan dan program nyata yang bisa kamu ikuti di bawah ini.
+              </p>
+            </div>
           </div>
-          <button
-            onClick={onOpenRegister}
-            className="text-xs font-bold text-[#1B5E3A] hover:text-[#2E9E5B] underline cursor-pointer"
+
+          <a
+            href="#program"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-extrabold text-[#1B5E3A] bg-[#43C572] hover:bg-[#38b264] transition-all shrink-0 cursor-pointer shadow-xs min-h-[44px]"
           >
-            Pilih Pilar Kamu Saat Daftar →
-          </button>
+            <span>Telusuri Katalog Program</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>

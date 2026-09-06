@@ -4,19 +4,19 @@ import { testimonialsData } from '../data';
 
 export const TestimonialsSection: React.FC = () => {
   return (
-    <section id="komunitas" className="py-16 sm:py-24 bg-white scroll-mt-20">
+    <section id="testimoni" className="py-16 sm:py-24 bg-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold text-[#1B5E3A] bg-emerald-50 border border-[#2E9E5B]/20 mb-3">
-            <span>Cerita Teman Muda AMI</span>
+            <span>Kata Alumni Program</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
-            Tumbuh Bersama, Bergerak Bersama dari Sabang sampai Merauke
+            Kata Mereka yang Sudah Ikut Program AMI
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-            Dengarkan langsung cerita mereka yang telah mengawali langkah, menemukan mentor sebaya, dan mewujudkan proyek
-            berdampak di komunitasnya.
+            Pengalaman nyata para pemuda setelah menuntaskan pelatihan terstruktur, dibimbing mentor, dan mewujudkan proyek
+            nyata di daerahnya masing-masing.
           </p>
         </div>
 
@@ -53,13 +53,15 @@ export const TestimonialsSection: React.FC = () => {
                 </p>
               </div>
 
-              {/* Author Info */}
+              {/* Author Info with Clean Initials Avatar */}
               <div className="pt-4 border-t border-slate-200/80 flex items-center gap-3">
-                <img
-                  src={testi.avatar}
-                  alt={testi.name}
-                  className="w-11 h-11 rounded-full object-cover border-2 border-[#2E9E5B] shrink-0"
-                />
+                <div
+                  className={`w-11 h-11 rounded-full flex items-center justify-center text-white font-extrabold text-sm shrink-0 border-2 border-white shadow-xs ${
+                    testi.colorBg || 'bg-[#1B5E3A]'
+                  }`}
+                >
+                  {testi.initials}
+                </div>
                 <div className="min-w-0">
                   <div className="flex items-center gap-1">
                     <h4 className="text-sm font-extrabold text-slate-900 truncate">

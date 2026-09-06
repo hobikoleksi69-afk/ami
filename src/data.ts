@@ -8,6 +8,8 @@ import {
   StatMetricItem,
   YouthTestimonialItem,
   YouthCertificateRecord,
+  CommunityChapterItem,
+  AmiNewsItem,
 } from './types';
 
 export const coreValuesData: CoreValueItem[] = [
@@ -161,6 +163,7 @@ export const youthProgramsData: YouthProgramItem[] = [
     ],
     status: 'Pendaftaran Dibuka',
     image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=80',
+    whatsappGroupLink: 'https://chat.whatsapp.com/GANTI_LINK_GRUP_FELLOWSHIP_2026',
   },
   {
     id: 'prog-2',
@@ -180,6 +183,7 @@ export const youthProgramsData: YouthProgramItem[] = [
     ],
     status: 'Pendaftaran Dibuka',
     image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&auto=format&fit=crop&q=80',
+    whatsappGroupLink: 'https://chat.whatsapp.com/GANTI_LINK_GRUP_RELAWAN_MENGAJAR',
   },
   {
     id: 'prog-3',
@@ -199,6 +203,7 @@ export const youthProgramsData: YouthProgramItem[] = [
     ],
     status: 'Segera Hadir',
     image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=80',
+    whatsappGroupLink: 'https://chat.whatsapp.com/GANTI_LINK_GRUP_YOUTHPRENEUR_B4',
   },
   {
     id: 'prog-4',
@@ -218,6 +223,7 @@ export const youthProgramsData: YouthProgramItem[] = [
     ],
     status: 'Pendaftaran Dibuka',
     image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&auto=format&fit=crop&q=80',
+    whatsappGroupLink: 'https://chat.whatsapp.com/GANTI_LINK_GRUP_POLICY_ADVOCACY',
   },
 ];
 
@@ -385,46 +391,177 @@ export const testimonialsData: YouthTestimonialItem[] = [
   {
     id: 'testi-1',
     name: 'Rizky Maulana',
+    initials: 'RM',
     role: 'Koordinator AMI Chapter Jawa Barat',
     organization: 'Mahasiswa Teknik Lingkungan ITB',
     city: 'Bandung',
     quote:
       'Di Inisiatif AMI, kami tidak cuma diajak berteori di ruang seminar. Ide proyek edukasi sanitasi desa kami dibimbing intensif sampai tembus pendanaan dan memiliki sistem sertifikasi yang diakui kampus.',
-    avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&auto=format&fit=crop&q=80',
+    colorBg: 'bg-[#1B5E3A]',
     level: 'Penggerak',
   },
   {
     id: 'testi-2',
     name: 'Sarah Paramitha',
+    initials: 'SP',
     role: 'Inisiator Bali Youth Eco Action',
     organization: 'Aktivis Lingkungan Muda',
     city: 'Denpasar',
     quote:
       'Sistem tingkatan berjenjang AMI ID dari Anggota, Aktivis, hingga Penggerak memberi kami kejelasan rekam jejak. Lembaga ini transparan, gerakannya nyata, dan atmosfernya sangat merangkul anak muda.',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
+    colorBg: 'bg-[#2E9E5B]',
     level: 'Aktivis',
   },
   {
     id: 'testi-3',
     name: 'Fajar Triyanto',
+    initials: 'FT',
     role: 'Founder Kopi Pemuda Flores',
     organization: 'Pegiat UMKM Kreatif',
     city: 'Manggarai Barat',
     quote:
       'Pilar AMI Berkarya membuka wawasan kami tentang branding dan packaging. Melalui jejaring AMI di Jakarta dan Surabaya, produk kopi petani muda desa kami akhirnya punya pasar nasional!',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80',
+    colorBg: 'bg-[#1B5E3A]',
     level: 'Penggerak',
   },
   {
     id: 'testi-4',
     name: 'Nabila Zahra',
+    initials: 'NZ',
     role: 'Pegiat Literasi Digital Pemuda',
     organization: 'Mahasiswi Ilmu Komunikasi USU',
     city: 'Medan',
     quote:
       'Modul Tumbuh yang disediakan gratis sangat membantu komunitas kami menyusun kurikulum mengajar di panti asuhan. AMI benar-benar rumah bertumbuh yang konkret bagi anak muda.',
-    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&auto=format&fit=crop&q=80',
+    colorBg: 'bg-[#43C572]',
     level: 'Anggota',
+  },
+];
+
+export const communityChaptersData: CommunityChapterItem[] = [
+  {
+    id: 'ch-jkt',
+    chapterName: 'AMI Chapter DKI Jakarta',
+    city: 'Jakarta',
+    province: 'DKI Jakarta',
+    activeMembers: 1420,
+    programsHeld: 28,
+    coordinator: 'Fadlan Al-Ghifari',
+    establishedYear: '2023',
+    status: 'Aktif',
+  },
+  {
+    id: 'ch-jbr',
+    chapterName: 'AMI Chapter Jawa Barat',
+    city: 'Bandung',
+    province: 'Jawa Barat',
+    activeMembers: 1850,
+    programsHeld: 34,
+    coordinator: 'Rizky Maulana',
+    establishedYear: '2023',
+    status: 'Aktif',
+  },
+  {
+    id: 'ch-diy',
+    chapterName: 'AMI Chapter DI Yogyakarta',
+    city: 'Yogyakarta',
+    province: 'DI Yogyakarta',
+    activeMembers: 1240,
+    programsHeld: 22,
+    coordinator: 'Sekar Kinanti',
+    establishedYear: '2024',
+    status: 'Aktif',
+  },
+  {
+    id: 'ch-jtm',
+    chapterName: 'AMI Chapter Jawa Timur',
+    city: 'Surabaya',
+    province: 'Jawa Timur',
+    activeMembers: 1610,
+    programsHeld: 26,
+    coordinator: 'Dimas Satria',
+    establishedYear: '2023',
+    status: 'Aktif',
+  },
+  {
+    id: 'ch-sumut',
+    chapterName: 'AMI Chapter Sumatera Utara',
+    city: 'Medan',
+    province: 'Sumatera Utara',
+    activeMembers: 890,
+    programsHeld: 16,
+    coordinator: 'Clara Sitorus',
+    establishedYear: '2024',
+    status: 'Aktif',
+  },
+  {
+    id: 'ch-sulsel',
+    chapterName: 'AMI Chapter Sulawesi Selatan',
+    city: 'Makassar',
+    province: 'Sulawesi Selatan',
+    activeMembers: 760,
+    programsHeld: 14,
+    coordinator: 'Andi M. Fikri',
+    establishedYear: '2024',
+    status: 'Aktif',
+  },
+  {
+    id: 'ch-bali',
+    chapterName: 'AMI Chapter Bali & NTB',
+    city: 'Denpasar',
+    province: 'Bali',
+    activeMembers: 680,
+    programsHeld: 12,
+    coordinator: 'Ni Putu Ayu Lestari',
+    establishedYear: '2024',
+    status: 'Aktif',
+  },
+  {
+    id: 'ch-kalbar',
+    chapterName: 'AMI Chapter Kalimantan Barat',
+    city: 'Pontianak',
+    province: 'Kalimantan Barat',
+    activeMembers: 420,
+    programsHeld: 8,
+    coordinator: 'Hendra Gunawan',
+    establishedYear: '2025',
+    status: 'Perintisan',
+  },
+];
+
+export const amiNewsData: AmiNewsItem[] = [
+  {
+    id: 'news-1',
+    title: 'Pelantikan 120 Relawan Mengajar AMI Pelosok Angkatan Ke-5',
+    date: '28 Februari 2026',
+    category: 'Aksi Peduli',
+    location: 'Sentul, Jawa Barat',
+    attendees: '120 Relawan Lapangan',
+    summary:
+      'Seluruh relawan telah menyelesaikan pembekalan pedagogik kreatif dan protokol tanggap darurat sebelum diberangkatkan ke 12 titik sekolah pelosok di 6 pulau nusantara.',
+    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'news-2',
+    title: 'Penerbitan Policy Brief Pemuda Terkait Kesempatan Magang Adil',
+    date: '15 Februari 2026',
+    category: 'Advokasi Bersuara',
+    location: 'Jakarta Pusat',
+    attendees: '40 BEM & Organisasi Pemuda',
+    summary:
+      'Tim riset AMI Bersuara menyerahkan dokumen rekomendasi perlindungan hak magang dan kompensasi layak bagi pemuda kepada pemangku kebijakan ketenagakerjaan.',
+    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'news-3',
+    title: 'Wisuda 350 Lulusan Future Leader Bootcamp Batch 3',
+    date: '30 Januari 2026',
+    category: 'Pelatihan AMI Belajar',
+    location: 'Hybrid (Daring & Mini-Hub 8 Kota)',
+    attendees: '350 Peserta Lulus',
+    summary:
+      'Para alumni bootcamp mempresentasikan 42 inisiatif proyek sosial dan inovasi rintisan mereka di hadapan dewan penguji praktisi industri dan alumni kehormatan AMI.',
+    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80',
   },
 ];
 

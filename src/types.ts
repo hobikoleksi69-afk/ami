@@ -35,6 +35,7 @@ export interface YouthProgramItem {
   curriculum: string[];
   status: 'Pendaftaran Dibuka' | 'Segera Hadir' | 'Sedang Berjalan';
   image: string;
+  whatsappGroupLink: string;
 }
 
 export interface GrowthModuleItem {
@@ -85,12 +86,43 @@ export interface StatMetricItem {
 export interface YouthTestimonialItem {
   id: string;
   name: string;
+  initials: string;
   role: string;
   organization: string;
   city: string;
   quote: string;
-  avatar: string;
+  colorBg?: string;
   level: 'Anggota' | 'Aktivis' | 'Penggerak';
+}
+
+export interface CommunityChapterItem {
+  id: string;
+  chapterName: string;
+  city: string;
+  province: string;
+  activeMembers: number;
+  programsHeld: number;
+  coordinator: string;
+  establishedYear: string;
+  status: 'Aktif' | 'Perintisan';
+}
+
+export interface AmiNewsItem {
+  id: string;
+  title: string;
+  date: string;
+  category: string;
+  summary: string;
+  image: string;
+  location: string;
+  attendees?: string;
+}
+
+export interface ProgramRegistrationFormData {
+  nama: string;
+  whatsapp: string;
+  kota: string;
+  nama_program: string;
 }
 
 export interface YouthCertificateRecord {

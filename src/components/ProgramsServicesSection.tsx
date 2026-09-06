@@ -30,7 +30,7 @@ interface ProgramsServicesSectionProps {
   onSelectModule: (module: GrowthModuleItem) => void;
   onSelectJournal: (journal: YouthJournalItem) => void;
   onSelectWork: (work: YouthWorkItem) => void;
-  onOpenRegister: () => void;
+  onOpenRegister: (program?: YouthProgramItem) => void;
 }
 
 export const ProgramsServicesSection: React.FC<ProgramsServicesSectionProps> = ({
@@ -293,17 +293,25 @@ export const ProgramsServicesSection: React.FC<ProgramsServicesSectionProps> = (
                   </div>
                 </div>
 
-                <div className="p-5 sm:p-6 pt-0 border-t border-slate-100 flex items-center justify-between mt-auto">
+                <div className="p-5 sm:p-6 pt-0 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 mt-auto">
                   <span className="text-xs font-bold text-[#2E9E5B] bg-emerald-50 px-2.5 py-1 rounded-lg">
                     {prog.status}
                   </span>
-                  <button
-                    onClick={() => onSelectProgram(prog)}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white bg-[#1B5E3A] hover:bg-[#14472c] transition-all cursor-pointer"
-                  >
-                    <span>Lihat Detail Program</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => onSelectProgram(prog)}
+                      className="px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-[#1B5E3A] hover:bg-slate-100 border border-slate-200 transition-all cursor-pointer"
+                    >
+                      Detail
+                    </button>
+                    <button
+                      onClick={() => onOpenRegister(prog)}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-extrabold text-[#1B5E3A] bg-[#43C572] hover:bg-[#38b264] transition-all cursor-pointer shadow-xs"
+                    >
+                      <span>Daftar Program</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
