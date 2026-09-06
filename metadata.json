@@ -1,0 +1,6 @@
+{
+  "name": "Inisiatif AMI - Anak Muda Indonesia",
+  "description": "Wadah resmi pengembangan anak muda Indonesia: Program terstruktur, aksi sosial, modul tumbuh, jurnal riset muda, dan keanggotaan AMI ID berjenjang. Tumbuh Bersama, Bergerak Bersama.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
